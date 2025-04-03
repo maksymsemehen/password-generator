@@ -7,4 +7,7 @@ def generate_password(length):
     return password
 
 user_input = int(input('Enter the password length (<= 94): '))
-print(generate_password(user_input))
+result = generate_password(user_input)
+
+with open('history.txt', 'a', encoding="utf-8") as file:
+    file.write(result + '\n')
